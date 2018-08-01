@@ -2,16 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <script src="../platform.js"></script>
-
   <title>Title</title>
+  <link rel="stylesheet" type="text/css" href="http://ugene.net/wp-content/themes/Ugene/style.css">
 </head>
 <body>
-  <script>
-    alert(platform
-      + ", " + platform.os.architecture
-      + ", " + platform.os.family)
-  </script>
+
+<span id="download_body_content"></span>
+<script src="../load-ugene-script.js"></script>
+<script>
+  lang = "ru";
+  loadUgeneScript("http://ugene.net/scripts/platform.js", lang, function(){
+    loadUgeneScript("../ugene-download-page.js", lang, function(){
+      /*document.write(download_body_content);*/
+      document.getElementById("download_body_content").innerHTML = download_body_content;
+    });
+  });
+</script>
+
 </body>
 </html>
